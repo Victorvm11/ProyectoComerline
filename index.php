@@ -30,3 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_category'])) 
     // Borrar todas las frases almacenadas
     $_SESSION['selected_phrases'] = array();
 }
+// Obtener la lista de categorías
+$categories = getCategories();
+?>
