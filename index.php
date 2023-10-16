@@ -21,3 +21,12 @@ function getRandomPhrase($category)
 if (!isset($_SESSION['selected_phrases'])) {
     $_SESSION['selected_phrases'] = array();
 }
+// Procesar la solicitud de selección de categoría y mostrar una frase aleatoria
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_category'])) {
+    $selected_category = $_POST['selected_category'];
+    $random_phrase = getRandomPhrase($selected_category);
+    array_push($_SESSION['selected_phrases'], $random_phrase);
+} elseif (isset($_POST['clear_phrases'])) {
+    // Borrar todas las frases almacenadas
+    $_SESSION['selected_phrases'] = array();
+}
