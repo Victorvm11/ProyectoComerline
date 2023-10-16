@@ -17,3 +17,7 @@ function getRandomPhrase($category)
     $phrase = json_decode($response);
     return $phrase->value;
 }
+// Inicializar la lista de frases seleccionadas si no existe
+if (!isset($_SESSION['selected_phrases'])) {
+    $_SESSION['selected_phrases'] = array();
+}
