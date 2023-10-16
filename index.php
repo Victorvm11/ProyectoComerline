@@ -33,3 +33,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_category'])) 
 // Obtener la lista de categorías
 $categories = getCategories();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="api.css">
+    <meta charset="UTF-8">
+    <title>Chuck Norris Phrases</title>
+</head>
+
+<body>
+    <h1>Chuck Norris Phrases</h1>
+
+    <h2>Selecciona una categoría:</h2>
+    <form method="post">
+        <select class="select_personalizado" name="selected_category">
+            <?php foreach ($categories as $category) { ?>
+                <option value="<?php echo $category; ?>">
+                    <?php echo $category; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <button type="submit">Obtener frase</button>
+    </form>
+
+    <?php if (isset($random_phrase)) { ?>
+        <h2>Frase aleatoria de la categoría seleccionada:</h2>
+        <p>
+            <?php echo $random_phrase; ?>
+        </p>
+    <?php } ?>
+
+    <h2>Frases seleccionadas:</h2>
+    <ul>
+        <?php foreach ($_SESSION['selected_phrases'] as $selected_phrase) { ?>
+            <li>
+                <?php echo $selected_phrase; ?>
+            </li>
+        <?php } ?>
+    </ul>
+    <!-- Botón para borrar frases almacenadas -->
+    <form method="post">
+        <button type="submit" name="clear_phrases">Borrar Frases Almacenadas</button>
+    </form>
+
+</body>
+
+</html>
