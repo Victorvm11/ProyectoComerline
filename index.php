@@ -26,6 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_category'])) 
     $selected_category = $_POST['selected_category'];
     $random_phrase = getRandomPhrase($selected_category);
     array_push($_SESSION['selected_phrases'], $random_phrase);
+    // Redirigir al usuario después de la solicitud POST para que no se añada una frase al recargar la página.
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit;
 } elseif (isset($_POST['clear_phrases'])) {
     // Borrar todas las frases almacenadas
     $_SESSION['selected_phrases'] = array();
