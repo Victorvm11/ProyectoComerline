@@ -1,0 +1,59 @@
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para el formulario y el botón */
+form {
+    text-align: left; /* Alinea el contenido a la izquierda */
+    margin-top: 20px;
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block; /* Hace que el botón sea un bloque para que ocupe todo el ancho del formulario */
+    margin-top: 10px; /* Espacio superior para separar el botón del select */
+}
+
+/* Estilo para la lista de frases seleccionadas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+/* Estilo para el select */
+.select_personalizado {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Estilo para las opciones dentro del select */
+.select_personalizado option {
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
